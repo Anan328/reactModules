@@ -10,6 +10,11 @@ function App() {
   // counter+=1;
   if(counter < 20){
     setCounter(counter+=1)
+    setCounter(counter+=1) 
+    // this will only work once no matter how much we repeat it.
+    // Because useState work in batches and sends them togther as same batch
+    // to handle this we use 
+    setCounter((prevCounter)=> prevCounter + 1)
   }
   //console.log(counter)
   }
