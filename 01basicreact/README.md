@@ -12,7 +12,7 @@ npm create vite@latest
 ```
 **Use the above command and proceed as directed, and then type:**
 ``` bash
-npm install
+npm install <app name>
 
 ```
 **This command will install the required packages**
