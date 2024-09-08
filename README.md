@@ -2,7 +2,7 @@
 ## Creating a React Project
 - Using npx
 ``` bash
-npx create-react-app <app name>
+npx create-react-app <app-name>
 
 ```
 - Using Vite
