@@ -2,7 +2,7 @@
 
 ## 1. Initial Render
 
-- **Setup**: When a React application first loads, React creates a Virtual DOM that represents the initial state of the UI components. This is like setting up the book catalog in our analogy.
+- **Setup**: When a React application first loads, React creates a Virtual DOM that represents the initial state of the UI components.
 - **Rendering**: React compares this Virtual DOM with an empty DOM (if it's the initial load) and renders the UI accordingly. It creates the actual DOM elements based on this Virtual DOM.
 
 ## 2. Updating State
