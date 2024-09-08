@@ -1,10 +1,11 @@
 import {useState} from "react"
 function App() {
-  const [color,setColor] = useState("white");
+    const [color,setColor] = useState("white");
     const changer = (e)=>{
     setColor(e.target.value)
     console.log(e.target.value)
     }
+    
     document.body.style.backgroundColor = color; // not a good practice but i had not other option ):
   return (
     <div className="App">
