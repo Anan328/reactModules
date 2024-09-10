@@ -6,20 +6,20 @@ import useCurrencyinfo from './hooks/useCurrencyinfo'
 function App() {
   const [amount, setAmount] = useState(1)
   const [convertedAmount,setConvertedAmount] = useState(0);
-  const [fromAmount,setFromAmount] = useState("usd")
-  const [toAmount,setToAmount] = useState("inr")
-  const data = useCurrencyinfo(fromAmount)
+  const [fromCurrency,setfromAmount] = useState("usd")
+  const [toCurrency,settoCurrency] = useState("inr")
+  const data = useCurrencyinfo(fromCurrency)
   const currencyKeys = Object.keys(data)
   //console.log(currencyKeys)
   const convert = ()=>{
     console.log(data);
-    let result  = (amount * data[toAmount]).toFixed(2);
+    let result  = (amount * data[toCurrency]).toFixed(2);
     setConvertedAmount(result);
     console.log(convertedAmount)
   }
   const swap = ()=>{
-    setFromAmount(toAmount);
-    setToAmount(fromAmount);
+    setfromAmount(toCurrency);
+    settoCurrency(fromCurrency);
     setAmount(convertedAmount);
     setConvertedAmount(amount);
   }
@@ -43,8 +43,8 @@ function App() {
                             label="From"
                             amount={amount}
                             currencyOptions={currencyKeys}
-                            currency={fromAmount}
-                            onCurrencyChange={setFromAmount}
+                            currency={fromCurrency}
+                            onCurrencyChange={setfromAmount}
                             onAmountChange={setAmount}
                             
                         />
@@ -63,9 +63,9 @@ function App() {
                         <InputBox
                             label="To"
                             amount={convertedAmount}
-                            currency={toAmount}
+                            currency={toCurrency}
                             currencyOptions={currencyKeys}
-                            onCurrencyChange={setToAmount}
+                            onCurrencyChange={settoCurrency}
 
                             
                         />
