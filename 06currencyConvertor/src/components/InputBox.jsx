@@ -1,5 +1,3 @@
-import useCurrencyinfo from "../hooks/useCurrencyinfo";
-
 function InputBox({
     label,
     amount,

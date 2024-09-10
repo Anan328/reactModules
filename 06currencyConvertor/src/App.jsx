@@ -6,20 +6,20 @@ import useCurrencyinfo from './hooks/useCurrencyinfo'
 function App() {
   const [amount, setAmount] = useState(1)
   const [convertedAmount,setConvertedAmount] = useState(0);
-  const [fromCurrency,setfromAmount] = useState("usd")
-  const [toCurrency,settoCurrency] = useState("inr")
+  const [fromCurrency,setFromCurrency] = useState("usd")
+  const [toCurrency,setToCurrency] = useState("inr")
   const data = useCurrencyinfo(fromCurrency)
   const currencyKeys = Object.keys(data)
-  //console.log(currencyKeys)
+  // console.log(currencyKeys)
   const convert = ()=>{
-    console.log(data);
+    // console.log(data);
     let result  = (amount * data[toCurrency]).toFixed(2);
     setConvertedAmount(result);
     console.log(convertedAmount)
   }
   const swap = ()=>{
-    setfromAmount(toCurrency);
-    settoCurrency(fromCurrency);
+    setFromCurrency(toCurrency);
+    setToCurrency(fromCurrency);
     setAmount(convertedAmount);
     setConvertedAmount(amount);
   }
@@ -44,7 +44,7 @@ function App() {
                             amount={amount}
                             currencyOptions={currencyKeys}
                             currency={fromCurrency}
-                            onCurrencyChange={setfromAmount}
+                            onCurrencyChange={setFromCurrency}
                             onAmountChange={setAmount}
                             
                         />
@@ -65,9 +65,8 @@ function App() {
                             amount={convertedAmount}
                             currency={toCurrency}
                             currencyOptions={currencyKeys}
-                            onCurrencyChange={settoCurrency}
-
-                            
+                            onCurrencyChange={setToCurrency}
+                             
                         />
                     </div>
                     <button 
