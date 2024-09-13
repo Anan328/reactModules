@@ -2,7 +2,6 @@ import React from 'react'
 import useTheme from '../context/Theme';
 
 export default function ThemeBtn() {
-    const state = document.body.style.backgroundColor;
     const {themeMode,lightTheme,darkTheme} = useTheme();
     const onChangeBtn = (e)=>{
         if(themeMode==='light') {document.body.style.backgroundColor="#1a202c"}
