@@ -5,6 +5,7 @@ function App() {
 
   return (
     <>
+      <h1 className="text-3xl font-bold  mt-4 text-center hover:underline hover:cursor-not-allowed">Context API</h1>
     </>
   )
 }
